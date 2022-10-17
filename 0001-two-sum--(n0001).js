@@ -31,7 +31,13 @@
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 const twoSum = (nums, target) => {
-  return
+  for (let i = 0; i <= nums.length - 1; i++) {
+    for (let y = i + 1; y <= nums.length - 1; y++) {
+      if (nums[i] + nums[y] === target) {
+        return [i, y]
+      }
+    }
+  }
 }
 
 console.log(twoSum([2, 7, 11, 15], 9))
