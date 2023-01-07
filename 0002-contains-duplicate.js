@@ -24,18 +24,37 @@
 // 1st SOLUTION:
 // Brute Force - Linear Search
 // Time O(N^2) | Space O(1)
+// const containsDuplicate = (nums) => {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       const duplicate = nums[i] === nums[j]
+
+//       if (duplicate) {
+//         return true
+//       }
+//     }
+//   }
+
+//   return false
+// }
+
+// 2nd SOLUTION:
+// Using hash objects
+// Time O(N) | Space O(N)
 const containsDuplicate = (nums) => {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      const duplicate = nums[i] === nums[j]
+  const hashObj = {}
 
-      if (duplicate) {
-        return true
-      }
+  let containsDuplicate = false
+
+  nums.forEach((num) => {
+    if (hashObj[num]) {
+      containsDuplicate = true
+    } else {
+      hashObj[num] = 1
     }
-  }
+  })
 
-  return false
+  return containsDuplicate
 }
 
 console.log(containsDuplicate([1, 2, 3, 1])) // true
