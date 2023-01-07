@@ -21,8 +21,21 @@
 // 1 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
+// 1st SOLUTION:
+// Brute Force - Linear Search
+// Time O(N^2) | Space O(1)
 const containsDuplicate = (nums) => {
-  return
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      const duplicate = nums[i] === nums[j]
+
+      if (duplicate) {
+        return true
+      }
+    }
+  }
+
+  return false
 }
 
 console.log(containsDuplicate([1, 2, 3, 1])) // true
