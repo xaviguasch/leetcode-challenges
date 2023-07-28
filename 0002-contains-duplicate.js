@@ -25,22 +25,23 @@
 // Brute Force - Linear Search
 // Time O(N^2) | Space O(1)
 // const containsDuplicate = (nums) => {
-//   for (let i = 0; i < nums.length; i++) {
-//     for (let j = i + 1; j < nums.length; j++) {
-//       const duplicate = nums[i] === nums[j]
+// for (let i = 0; i < nums.length; i++) {
+//   for (let j = i + 1; j < nums.length; j++) {
+//     const duplicate = nums[i] === nums[j]
 
-//       if (duplicate) {
-//         return true
-//       }
+//     if (duplicate) {
+//       return true
 //     }
 //   }
+// }
 
-//   return false
+// return false
 // }
 
 // 2nd SOLUTION:
 // Using hash objects
 // Time O(N) | Space O(N)
+// Runtime: 107 ms
 const containsDuplicate = (nums) => {
   const hashObj = {}
 
